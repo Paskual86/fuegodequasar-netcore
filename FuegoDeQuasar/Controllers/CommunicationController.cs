@@ -49,7 +49,6 @@ namespace FuegoDeQuasar.Controllers
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
 
-
             return Ok(new SatelliteResponseDto());
         }
 
@@ -59,7 +58,7 @@ namespace FuegoDeQuasar.Controllers
         /// <param name="satellite_name"></param>
         /// <returns></returns>
         [HttpGet("topsecret_split/{satellite_name}")]
-        public async Task<IActionResult> GetByPhone(string satellite_name)
+        public async Task<IActionResult> TopSecretSplitGet(string satellite_name)
         {
             if (!ModelState.IsValid)
             {
