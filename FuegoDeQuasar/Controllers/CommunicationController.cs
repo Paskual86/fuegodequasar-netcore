@@ -35,7 +35,7 @@ namespace FuegoDeQuasar.Controllers
         /// <param name="satellite_name"></param>
         /// <returns></returns>
         [HttpPost("topsecret_split/{satellite_name}")]
-        public async Task<IActionResult> TopSecretSplit([FromBody]SatelliteRequestDto payload, [FromHeader] string satellite_name)
+        public async Task<IActionResult> TopSecretSplit([FromBody]SatelliteRequestDto payload, [FromRoute] string satellite_name)
         {
             if (payload == null)
             {
@@ -46,10 +46,14 @@ namespace FuegoDeQuasar.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var response = new SatelliteResponseDto
+            {
+                Message = satellite_name
+            };
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
 
-            return Ok(new SatelliteResponseDto());
+            return Ok(response);
         }
 
         /// <summary>
@@ -67,8 +71,12 @@ namespace FuegoDeQuasar.Controllers
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
 
+            var response = new SatelliteResponseDto
+            {
+                Message = satellite_name
+            };
 
-            return Ok(new SatelliteResponseDto());
+            return Ok(response);
         }
     }
 }
