@@ -1,6 +1,7 @@
 ﻿using FuegoDeQuasar.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FuegoDeQuasar.Controllers
@@ -9,7 +10,7 @@ namespace FuegoDeQuasar.Controllers
     [ApiController]
     public class CommunicationController : ControllerBase
     {
-        [HttpPost]
+        [HttpPost("topsecret")]
         public async Task<IActionResult> TopSecret(List<SatelliteRequestDto> payload)
         {
             if (payload == null)
@@ -23,8 +24,12 @@ namespace FuegoDeQuasar.Controllers
             }
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
+            var value = payload.FirstOrDefault();
 
-
+            var model = new SatelliteResponseDto
+            {
+                Message = (payload.FirstOrDefault() != null) ? $"There is are {value.Message.Length.ToString()} messages" : "There is not messages"
+            };
             return Ok(new SatelliteResponseDto());
         }
 
