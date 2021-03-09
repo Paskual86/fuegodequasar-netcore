@@ -30,7 +30,7 @@ namespace FuegoDeQuasar.Controllers
             {
                 Message = (payload.FirstOrDefault() != null) ? $"There is are {value.Message.Length.ToString()} messages" : "There is not messages"
             };
-            return Ok(new SatelliteResponseDto());
+            return Ok(model);
         }
 
         /// <summary>
