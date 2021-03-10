@@ -13,5 +13,6 @@
     "profile"              : "Pablo",
     "solution-stack"       : "64bit Windows Server 2019 v2.6.3 running IIS 10.0",
     "iis-website"          : "Default Web Site",
-    "app-path"             : "/"
+    "app-path"             : "/",
+    "health-check-url"     : "//fuegodequasar.us-east-2.elasticbeanstalk.com/api/test"
 }
