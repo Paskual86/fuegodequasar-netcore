@@ -1,4 +1,6 @@
-﻿using FuegoDeQuasar.Domain.Interfaces;
+﻿using AutoMapper;
+using FuegoDeQuasar.Domain.Entities;
+using FuegoDeQuasar.Domain.Interfaces;
 using FuegoDeQuasar.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,10 +14,12 @@ namespace FuegoDeQuasar.Controllers
     public class CommunicationController : ControllerBase
     {
         private readonly ICommunicationBusiness _communicationBusiness;
+        private readonly IMapper _mapper;
 
-        public CommunicationController(ICommunicationBusiness communicationBusiness)
+        public CommunicationController(ICommunicationBusiness communicationBusiness, IMapper mapper)
         {
             _communicationBusiness = communicationBusiness;
+            _mapper = mapper;
         }
 
         [HttpPost("topsecret")]
@@ -32,15 +36,9 @@ namespace FuegoDeQuasar.Controllers
             }
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
-            var value = payload.FirstOrDefault();
-             
-            var result = _communicationBusiness.GetMessage()
-            var model = new SatelliteResponseDto
-            {
-                Message = (payload.FirstOrDefault() != null) ? $"There is are {value.Message.Length.ToString()} messages" : "There is not messages"
-            };
+            var result = _communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(payload));
 
-            return Ok(model);
+            return Ok(_mapper.Map<SatelliteResponseDto>(result));
         }
 
         /// <summary>

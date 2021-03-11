@@ -28,6 +28,7 @@ namespace FuegoDeQuasar.Core.Business
                 Position = _trilaterationOperation.GetLocation(GetKenobiDistance(payload), GetSkywalkerDistance(payload), GetSatoDistance(payload)),
                 Message = _messageOperation.GetMessage(GetMessages(payload))
             };
+
             return response;
         }
 
