@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FuegoDeQuasar.Core\FuegoDeQuasar.Core.csproj" />
     <ProjectReference Include="..\FuegoDeQuasar.Dtos\FuegoDeQuasar.Dtos.csproj" />
   </ItemGroup>
 

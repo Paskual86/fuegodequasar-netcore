@@ -1,6 +1,6 @@
 ﻿namespace FuegoDeQuasar.Domain.Interfaces
 {
-    interface IMessageOperation
+    public interface IMessageOperation
     {
         string GetMessage(string[] messages);
     }
