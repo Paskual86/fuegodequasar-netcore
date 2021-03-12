@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuegoDeQuasar.Domain", "Fue
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuegoDeQuasar.Dtos", "FuegoDeQuasar.Dtos\FuegoDeQuasar.Dtos.csproj", "{31232EED-CB44-4E60-B828-05ECC5E39F86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuegoDeQuasar.EntityMapper", "FuegoDeQuasar.EntityMapper\FuegoDeQuasar.EntityMapper.csproj", "{96F2997D-1722-4737-87CA-4A7BF591D623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuegoDeQuasar.EntityMapper", "FuegoDeQuasar.EntityMapper\FuegoDeQuasar.EntityMapper.csproj", "{96F2997D-1722-4737-87CA-4A7BF591D623}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E12F3780-FFC2-47D9-8EE1-1E5CBBA5D707}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\pablo\Downloads\Operacion Fuego de Quasar v1.1 (1).pdf = C:\Users\pablo\Downloads\Operacion Fuego de Quasar v1.1 (1).pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

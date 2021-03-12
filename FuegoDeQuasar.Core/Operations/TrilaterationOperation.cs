@@ -39,9 +39,8 @@ namespace FuegoDeQuasar.Core.Operations
             var j = _mathOperation.Dot(ey, _mathOperation.SubstractPoint(_satelliteSkywalker, _satelliteKenobi));
 
 
-            locationResult.X = (_mathOperation.Square(distanceTransmiterKenobi.Value) - _mathOperation.Square(distanceTransmiterSato.Value) + _mathOperation.Square(d)) / (2 * d);
-
-            locationResult.Y = (_mathOperation.Square(distanceTransmiterKenobi.Value) - _mathOperation.Square(distanceTransmiterSkywalker.Value) + _mathOperation.Square(i) + _mathOperation.Square(j)) / (2 * j) - (i / j) * locationResult.X;
+            locationResult.X = Math.Round((_mathOperation.Square(distanceTransmiterKenobi.Value) - _mathOperation.Square(distanceTransmiterSato.Value) + _mathOperation.Square(d)) / (2 * d), 2);
+            locationResult.Y = Math.Round((_mathOperation.Square(distanceTransmiterKenobi.Value) - _mathOperation.Square(distanceTransmiterSkywalker.Value) + _mathOperation.Square(i) + _mathOperation.Square(j)) / (2 * j) - (i / j) * locationResult.X, 2);
 
             return locationResult;
         }

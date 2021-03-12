@@ -49,7 +49,7 @@ namespace FuegoDeQuasar.Core.Business
         /// <returns></returns>
         private decimal? GetSkywalkerDistance(List<SatelliteRequest> payload)
         {
-            return GetDistance(payload, "kywalker");
+            return GetDistance(payload, "skywalker");
         }
 
         /// <summary>

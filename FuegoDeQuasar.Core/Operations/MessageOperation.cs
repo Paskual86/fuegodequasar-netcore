@@ -13,7 +13,7 @@ namespace FuegoDeQuasar.Core.Operations
             {
                 result += messages[i] + " ";
             }
-            return string.Empty;
+            return result;
 
         }
 
@@ -31,7 +31,10 @@ namespace FuegoDeQuasar.Core.Operations
                 {
                     if (item.Length == maxLength)
                     {
-                        if ((msgResult[i].Length == 0) && (msgResult[i] != item[i])) msgResult[i] = item[i];
+                        if (string.IsNullOrEmpty(msgResult[i]))
+                        {
+                            msgResult[i] = item[i];
+                        }                        
                     }
                 }
             }

@@ -38,8 +38,10 @@ namespace FuegoDeQuasar.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
-            if (!_communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(payload.Satellites), out SatelliteResponse response)) return BadRequest();
+
+            if (!_communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(payload.Satellites), out SatelliteResponse response)) 
+                return BadRequest();
+
             return Ok(_mapper.Map<SatelliteResponseDto>(response));
         }
 
