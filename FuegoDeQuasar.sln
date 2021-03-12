@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuegoDeQuasar.EntityMapper"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E12F3780-FFC2-47D9-8EE1-1E5CBBA5D707}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\pablo\Downloads\Operacion Fuego de Quasar v1.1 (1).pdf = C:\Users\pablo\Downloads\Operacion Fuego de Quasar v1.1 (1).pdf
+		Documentation\Operacion Fuego de Quasar v1.1.pdf = Documentation\Operacion Fuego de Quasar v1.1.pdf
 	EndProjectSection
 EndProject
 Global
