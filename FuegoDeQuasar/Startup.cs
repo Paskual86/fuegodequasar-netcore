@@ -38,7 +38,15 @@ namespace FuegoDeQuasar
         {
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FuegoDeQuasar v1"));
+            // Enable middle ware to serve swagger-ui (HTML, JS, CSS etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+#if DEBUG
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Jwt Security Api v1 (DEBUG)");
+#else
+            c.SwaggerEndpoint("/[]virtualDir]/swagger/v1/swagger.json", "Jwt Security Api v1 (RELEASE)");
+#endif
+            });
 
             app.UseHttpsRedirection();
 
