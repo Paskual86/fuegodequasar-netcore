@@ -1,4 +1,6 @@
+using AutoMapper;
 using FuegoDeQuasar.Core.IoC;
+using FuegoDeQuasar.EntityMapper.Profiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +29,8 @@ namespace FuegoDeQuasar
             });
 
             services.ConfigureCore();
+
+            services.AddAutoMapper(typeof(MappingDtoProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

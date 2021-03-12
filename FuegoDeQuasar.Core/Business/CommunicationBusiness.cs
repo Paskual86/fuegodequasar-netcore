@@ -21,15 +21,15 @@ namespace FuegoDeQuasar.Core.Business
         /// </summary>
         /// <param name="payload"></param>
         /// <returns></returns>
-        public SatelliteResponse GetMessage(List<SatelliteRequest> payload)
+        public bool GetMessage(List<SatelliteRequest> payload, out SatelliteResponse response)
         {
-            var response = new SatelliteResponse
+            response = new SatelliteResponse
             {
                 Position = _trilaterationOperation.GetLocation(GetKenobiDistance(payload), GetSkywalkerDistance(payload), GetSatoDistance(payload)),
                 Message = _messageOperation.GetMessage(GetMessages(payload))
             };
 
-            return response;
+            return ((response.Position != null)&&(response.Message.Trim().Length != 0));
         }
 
         /// <summary>

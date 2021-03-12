@@ -22,6 +22,10 @@ namespace FuegoDeQuasar.Core.Operations
         {
             var locationResult = new Location();
 
+            if (!distanceTransmiterKenobi.HasValue ||
+                !distanceTransmiterSkywalker.HasValue ||
+                !distanceTransmiterSato.HasValue) return null;
+
 
             var ex = _mathOperation.DividePoint(_mathOperation.SubstractPoint(_satelliteKenobi, _satelliteSato), _mathOperation.Normalize(_mathOperation.SubstractPoint(_satelliteKenobi, _satelliteSato)));
 

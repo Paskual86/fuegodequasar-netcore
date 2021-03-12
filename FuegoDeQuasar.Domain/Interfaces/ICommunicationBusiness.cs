@@ -5,6 +5,6 @@ namespace FuegoDeQuasar.Domain.Interfaces
 {
     public interface ICommunicationBusiness
     {
-        SatelliteResponse GetMessage(List<SatelliteRequest> payload);
+        bool GetMessage(List<SatelliteRequest> payload, out SatelliteResponse response);
     }
 }

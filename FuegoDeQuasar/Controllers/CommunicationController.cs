@@ -4,7 +4,6 @@ using FuegoDeQuasar.Domain.Interfaces;
 using FuegoDeQuasar.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FuegoDeQuasar.Controllers
@@ -22,8 +21,13 @@ namespace FuegoDeQuasar.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <returns></returns>
         [HttpPost("topsecret")]
-        public async Task<IActionResult> TopSecret(List<SatelliteRequestDto> payload)
+        public async Task<IActionResult> TopSecret(RequestDto payload)
         {
             if (payload == null)
             {
@@ -34,11 +38,9 @@ namespace FuegoDeQuasar.Controllers
             {
                 return BadRequest(ModelState);
             }
-            // Response Ok 200 + La respuesta
-            // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
-            var result = _communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(payload));
-
-            return Ok(_mapper.Map<SatelliteResponseDto>(result));
+            
+            if (!_communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(payload.Satellites), out SatelliteResponse response)) return BadRequest();
+            return Ok(_mapper.Map<SatelliteResponseDto>(response));
         }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace FuegoDeQuasar.Controllers
             {
                 Message = satellite_name
             };
+            
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
 
