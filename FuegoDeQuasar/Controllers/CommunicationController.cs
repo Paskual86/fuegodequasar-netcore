@@ -64,15 +64,26 @@ namespace FuegoDeQuasar.Controllers
                 return BadRequest(ModelState);
             }
 
-            var response = new SatelliteResponseDto
+            RequestDto request = new RequestDto
             {
-                Message = satellite_name
+                Satellites = new List<SatelliteRequestDto>
+            {
+                new SatelliteRequestDto()
+                {
+                    Distance = payload.Distance,
+                    Message = payload.Message,
+                    Name = satellite_name
+                }
+            }
             };
+
+            if (!_communicationBusiness.GetMessage(_mapper.Map<List<SatelliteRequest>>(request.Satellites), out SatelliteResponse response))
+                return BadRequest();
             
             // Response Ok 200 + La respuesta
             // Response Error 404 => En caso que no se pueda determinar la posición o el mensaje, retorna:
 
-            return Ok(response);
+            return Ok(_mapper.Map<SatelliteResponseDto>(response));
         }
 
         /// <summary>

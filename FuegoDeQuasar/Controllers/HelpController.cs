@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Text;
-
-namespace FuegoDeQuasar.Controllers
+﻿namespace FuegoDeQuasar.Controllers
 {
-    [Route("api/[controller]")]
+    /*[Route("api/[controller]")]
     [ApiController]
     public class HelpController : ControllerBase
     {
@@ -20,5 +17,5 @@ namespace FuegoDeQuasar.Controllers
             sbDocumentation.Append("<p><strong>Repository: </strong><a href=\"https://github.com/Paskual86/fuegodequasar-netcore.git\">GIT</a></p>");
             return base.Content(sbDocumentation.ToString(), "text/html"); 
         }
-    }
+    }*/
 }
