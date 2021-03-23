@@ -19,4 +19,4 @@ Para levantar la solucion es necesario Visual Studio.
 
 ## Hosting
 
-La aplicacion fue subida hosteada en AWS y puede encontrarla en la siguiente URL: http://fuegodequasar.us-east-2.elasticbeanstalk.com/
+La aplicacion fue subida hosteada en AWS y puede encontrarla en la siguiente URL: http://fuegodequasar-env.eba-ubcqczkn.us-east-2.elasticbeanstalk.com/swagger/index.html
